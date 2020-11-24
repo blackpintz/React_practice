@@ -11,6 +11,7 @@ class EditTodoForm extends Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.toggleForm()
+        console.log(this.state);
         this.props.updateTodo(this.state.id, this.state)
     }
 

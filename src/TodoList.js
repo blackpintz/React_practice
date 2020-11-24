@@ -23,9 +23,14 @@ class TodoList extends Component {
     }
 
     update(id, content) {
-        let myTodos = this.state.todos
+        const updatedTodos = this.state.todos.map(todo => {
+            if(todo.id === id) {
+                return {...todo, task: content};
+            }
+            return todo
+        })
         this.setState({
-            todos: this.state.todos.splice(this.state.todos.indexOf({id: id}), 0, content)
+            todos: updatedTodos
         })
     }
     render() {
